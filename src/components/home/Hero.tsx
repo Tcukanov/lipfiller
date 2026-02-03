@@ -36,7 +36,7 @@ export function Hero() {
 
             <h1 className="heading-display text-primary-900 mb-8">
               <span className="block">Lip Filler NYC </span>
-              <span className="block text-gold-500">Medical Studio in Midtown </span>
+              <span className="block text-gold-500">Med Studio in Midtown </span>
             </h1>
 
             <p className="text-lg text-primary-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
