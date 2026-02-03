@@ -1,11 +1,5 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Clock, CheckCircle, ArrowLeft, Calendar, Phone } from 'lucide-react'
-import { procedures, getProcedureBySlug, getProcedureSlugs } from '@/data/procedures'
-
-// Convert procedures array to object for compatibility
-const proceduresData: Record<string, {
+export interface Procedure {
+  slug: string
   title: string
   category: string
   description: string
@@ -14,24 +8,16 @@ const proceduresData: Record<string, {
   duration: string
   recovery: string
   price: string
-  faqs: { question: string; answer: string }[]
-}> = Object.fromEntries(
-  procedures.map(p => [p.slug, p])
-)
+  popular?: boolean
+  faqs: {
+    question: string
+    answer: string
+  }[]
+}
 
-// Legacy data for backward compatibility
-const legacyProceduresData: Record<string, {
-  title: string
-  category: string
-  description: string
-  content: string
-  benefits: string[]
-  duration: string
-  recovery: string
-  price: string
-  faqs: { question: string; answer: string }[]
-}> = {
-  'russian-lip-filler': {
+export const procedures: Procedure[] = [
+  {
+    slug: 'russian-lip-filler',
     title: 'Russian Lip Filler Technique',
     category: 'Lip Enhancement',
     description:
@@ -59,6 +45,7 @@ const legacyProceduresData: Record<string, {
     duration: '30-45 minutes',
     recovery: '24-48 hours of mild swelling',
     price: 'Starting at $650',
+    popular: true,
     faqs: [
       {
         question: 'Does the Russian lip technique hurt?',
@@ -73,11 +60,12 @@ const legacyProceduresData: Record<string, {
       {
         question: 'Am I a good candidate for Russian lips?',
         answer:
-          'The Russian technique works well for most people who want more defined, lifted lips without excessive volume. During your consultation, we\'ll assess your lip anatomy and discuss the best approach for your goals.',
+          "The Russian technique works well for most people who want more defined, lifted lips without excessive volume. During your consultation, we'll assess your lip anatomy and discuss the best approach for your goals.",
       },
     ],
   },
-  'lip-augmentation': {
+  {
+    slug: 'lip-augmentation',
     title: 'Lip Augmentation',
     category: 'Lip Enhancement',
     description:
@@ -115,7 +103,8 @@ const legacyProceduresData: Record<string, {
       },
     ],
   },
-  'face-contouring': {
+  {
+    slug: 'face-contouring',
     title: 'Face Contouring',
     category: 'Facial Enhancement',
     description:
@@ -153,7 +142,8 @@ const legacyProceduresData: Record<string, {
       },
     ],
   },
-  'botox': {
+  {
+    slug: 'botox',
     title: 'Botox',
     category: 'Anti-Aging',
     description:
@@ -182,7 +172,7 @@ const legacyProceduresData: Record<string, {
       {
         question: 'When will I see results?',
         answer:
-          'You\'ll start to see results within 3-5 days, with full effects visible at 2 weeks.',
+          "You'll start to see results within 3-5 days, with full effects visible at 2 weeks.",
       },
       {
         question: 'Will I look frozen?',
@@ -191,7 +181,8 @@ const legacyProceduresData: Record<string, {
       },
     ],
   },
-  'powder-brows': {
+  {
+    slug: 'powder-brows',
     title: 'Powder Brows',
     category: 'Cosmetic Tattoo',
     description:
@@ -229,225 +220,12 @@ const legacyProceduresData: Record<string, {
       },
     ],
   },
+]
+
+export function getProcedureBySlug(slug: string): Procedure | undefined {
+  return procedures.find((p) => p.slug === slug)
 }
 
-export async function generateStaticParams() {
-  return getProcedureSlugs().map((slug) => ({
-    slug,
-  }))
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}): Promise<Metadata> {
-  const { slug } = await params
-  const procedure = proceduresData[slug]
-
-  if (!procedure) {
-    return {
-      title: 'Procedure Not Found',
-    }
-  }
-
-  return {
-    title: `${procedure.title} | NYC's Premier Treatment`,
-    description: procedure.description,
-    keywords: [
-      procedure.title.toLowerCase(),
-      `${procedure.title.toLowerCase()} NYC`,
-      `${procedure.category.toLowerCase()} NYC`,
-      'aesthetic treatment NYC',
-      'cosmetic procedure New York',
-    ],
-    openGraph: {
-      title: `${procedure.title} | LipFiller NYC`,
-      description: procedure.description,
-    },
-  }
-}
-
-export default async function ProcedurePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-  const procedure = proceduresData[slug]
-
-  if (!procedure) {
-    notFound()
-  }
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalProcedure',
-    name: procedure.title,
-    description: procedure.description,
-    procedureType: 'Cosmetic',
-    howPerformed: procedure.content,
-    preparation: 'Consultation required',
-    followup: procedure.recovery,
-    status: 'Available',
-  }
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-secondary-50 to-white">
-        <div className="container-custom">
-          <Link
-            href="/procedures"
-            className="inline-flex items-center text-gray-600 hover:text-primary-600 mb-6 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Procedures
-          </Link>
-
-          <div className="max-w-4xl">
-            <span className="inline-block bg-primary-100 text-primary-700 text-sm font-medium px-3 py-1 rounded-full mb-4">
-              {procedure.category}
-            </span>
-
-            <h1 className="heading-display text-gray-900 mb-6">
-              {procedure.title}
-            </h1>
-
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              {procedure.description}
-            </p>
-
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Clock className="w-5 h-5 text-primary-500" />
-                <span>{procedure.duration}</span>
-              </div>
-              <div className="text-2xl font-bold text-primary-600">
-                {procedure.price}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <div
-                className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: procedure.content }}
-              />
-
-              {/* Benefits */}
-              <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                  Benefits
-                </h3>
-                <ul className="space-y-3">
-                  {procedure.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* FAQs */}
-              {procedure.faqs.length > 0 && (
-                <div className="mt-12">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                    Frequently Asked Questions
-                  </h3>
-                  <div className="space-y-4">
-                    {procedure.faqs.map((faq) => (
-                      <div
-                        key={faq.question}
-                        className="border border-gray-200 rounded-lg p-6"
-                      >
-                        <h4 className="font-semibold text-gray-900 mb-2">
-                          {faq.question}
-                        </h4>
-                        <p className="text-gray-600">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-32 space-y-6">
-                {/* Booking Card */}
-                <div className="card p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                    Book This Treatment
-                  </h3>
-
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Duration</span>
-                      <span className="font-medium">{procedure.duration}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Recovery</span>
-                      <span className="font-medium">{procedure.recovery}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Price</span>
-                      <span className="font-medium text-primary-600">
-                        {procedure.price}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <Link href="/contact" className="btn btn-primary w-full">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      Book Appointment
-                    </Link>
-                    <a
-                      href="tel:6465438898"
-                      className="btn btn-outline w-full"
-                    >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Us
-                    </a>
-                  </div>
-                </div>
-
-                {/* Info Card */}
-                <div className="bg-primary-50 rounded-xl p-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">
-                    Free Consultation
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-4">
-                    Not sure if this treatment is right for you? Book a free
-                    consultation to discuss your goals with our expert
-                    practitioners.
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="text-primary-600 font-medium text-sm hover:text-primary-700"
-                  >
-                    Schedule Now →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+export function getProcedureSlugs(): string[] {
+  return procedures.map((p) => p.slug)
 }

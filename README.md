@@ -1,172 +1,219 @@
 # LipFiller NYC - Aesthetic Med Studio Website
 
-A modern, SEO-optimized website for LipFiller NYC built with Next.js 14, featuring an admin panel for content management.
+A modern, SEO-optimized website for LipFiller NYC built with Next.js 14.
 
-## Features
+## ✨ Features
 
-- **Modern UI/UX**: Beautiful, responsive design with smooth animations
-- **SEO Optimized**: Full metadata, structured data (JSON-LD), sitemap, and robots.txt
-- **Admin Panel**: Manage contacts, settings, and content
-- **Contact Form**: Stores submissions in database for follow-up
-- **Fast Performance**: Built with Next.js App Router and server components
+- **Modern UI/UX**: Elegant design with luxurious color scheme (charcoal, cream, gold)
+- **Fully SEO Optimized**: Complete metadata, structured data (JSON-LD), sitemap, robots.txt
+- **Easy to Edit**: All content in simple TypeScript files - no database needed!
+- **Contact Form**: Ready to integrate with email services
+- **Fast Performance**: Built with Next.js App Router and optimized for speed
+- **Mobile Responsive**: Perfect on all devices
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Database**: SQLite with Prisma ORM
-- **Authentication**: JWT-based auth
+- **Styling**: Tailwind CSS with custom luxurious theme
+- **Fonts**: Cormorant Garamond (display) + DM Sans (body)
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Deployment**: Vercel
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
+## 🚀 Getting Started
 
 ### Installation
 
-1. Clone the repository:
+1. Install dependencies:
 ```bash
-git clone https://github.com/yourusername/lipfiller-nyc.git
-cd lipfiller-nyc
-```
-
-2. Install dependencies:
-```bash
+cd /Users/mustafa/Documents/lipfiller
 npm install
 ```
 
-3. Create environment file:
-```bash
-# Create a .env file with the following:
-DATABASE_URL="file:./dev.db"
-JWT_SECRET="your-super-secret-jwt-key-change-in-production"
-NEXT_PUBLIC_SITE_URL="https://lipfiller.nyc"
-```
-
-4. Set up the database:
-```bash
-npm run db:push
-npm run db:seed
-```
-
-5. Start the development server:
+2. Start development server:
 ```bash
 npm run dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+3. Open http://localhost:3000
 
-### Admin Panel
+## 📝 How to Edit Content
 
-Access the admin panel at `/admin/login`:
-- **Email**: admin@lipfiller.nyc
-- **Password**: admin123
+All content is in simple TypeScript files in `/src/data/`. No database or admin panel needed!
 
-**Important**: Change these credentials in production!
+### Edit Site Info (Phone, Address, etc.)
+**File**: `src/data/site-config.ts`
 
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── admin/             # Admin panel pages
-│   ├── api/               # API routes
-│   ├── contact/           # Contact page
-│   ├── gallery/           # Gallery page
-│   ├── pricing/           # Pricing page
-│   ├── procedures/        # Procedures pages
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   ├── sitemap.ts         # Dynamic sitemap
-│   └── robots.ts          # Robots.txt
-├── components/            # React components
-│   ├── admin/            # Admin panel components
-│   ├── contact/          # Contact form
-│   ├── home/             # Home page sections
-│   ├── layout/           # Header, Footer
-│   └── ui/               # Reusable UI components
-├── lib/                   # Utility functions
-│   ├── auth.ts           # Authentication helpers
-│   ├── prisma.ts         # Prisma client
-│   └── utils.ts          # General utilities
-└── prisma/
-    ├── schema.prisma     # Database schema
-    └── seed.ts           # Seed data
-```
-
-## Deployment to Vercel
-
-### Option 1: Vercel Dashboard
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your GitHub repository
-4. Add environment variables:
-   - `DATABASE_URL` - Use a hosted database like Neon, PlanetScale, or Turso
-   - `JWT_SECRET` - A secure random string
-   - `NEXT_PUBLIC_SITE_URL` - Your domain (https://lipfiller.nyc)
-5. Deploy!
-
-### Option 2: Vercel CLI
-
-```bash
-npm i -g vercel
-vercel
-```
-
-### Production Database
-
-For production, use a hosted database service:
-
-- **Neon** (PostgreSQL): Update `schema.prisma` provider to `postgresql`
-- **PlanetScale** (MySQL): Update `schema.prisma` provider to `mysql`
-- **Turso** (SQLite edge): Keep SQLite provider
-
-## SEO Features
-
-- **Metadata API**: Full title, description, keywords, and OpenGraph tags
-- **Structured Data**: JSON-LD for MedicalBusiness, Service, ContactPage
-- **Sitemap**: Auto-generated sitemap.xml
-- **Robots.txt**: Configured robots.txt
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-
-## Customization
-
-### Colors
-
-Edit `tailwind.config.ts` to change the color scheme:
-
-```ts
-colors: {
-  primary: { /* rose/pink tones */ },
-  secondary: { /* dark brown tones */ },
-  gold: { /* gold accent tones */ },
+```typescript
+export const siteConfig = {
+  name: 'LipFiller NYC',
+  contact: {
+    phone: '646.543.8898',  // Change this
+    email: 'info@lipfiller.nyc',  // Change this
+    address: '245 5th Avenue...',  // Change this
+  },
+  // ... more settings
 }
 ```
 
-### Content
+### Edit Procedures
+**File**: `src/data/procedures.ts`
 
-1. Update `prisma/seed.ts` with your content
-2. Run `npm run db:seed` to apply changes
-3. Or use the admin panel to update content
+```typescript
+export const procedures: Procedure[] = [
+  {
+    slug: 'russian-lip-filler',
+    title: 'Russian Lip Filler Technique',
+    price: 'Starting at $650',
+    description: '...',
+    // ... edit or add new procedures
+  },
+]
+```
 
-### Images
+### Edit Pricing
+**File**: `src/data/pricing.ts`
 
-Add your images to the `public` folder:
-- `og-image.jpg` - OpenGraph image (1200x630px)
-- `favicon.ico` - Favicon
-- `apple-touch-icon.png` - Apple touch icon
-- `icon-192.png` & `icon-512.png` - PWA icons
+```typescript
+export const pricingCategories = [
+  {
+    title: 'Lip Enhancement',
+    services: [
+      { name: 'Russian Lip', price: '$650+', description: '...' },
+      // ... add or edit services
+    ],
+  },
+]
+```
 
-## License
+### Edit Testimonials
+**File**: `src/data/testimonials.ts`
 
-MIT
+```typescript
+export const testimonials = [
+  {
+    name: 'Sarah M.',
+    treatment: 'Russian Lip Technique',
+    text: 'Amazing results!',
+    rating: 5,
+  },
+]
+```
 
-## Support
+### Edit Services (Home Page)
+**File**: `src/data/services.ts`
 
-For questions or support, contact: info@lipfiller.nyc
+## 🎨 Customization
+
+### Change Colors
+Edit `tailwind.config.ts`:
+
+```typescript
+colors: {
+  primary: { /* charcoal/black */ },
+  cream: { /* warm cream */ },
+  gold: { /* elegant gold */ },
+}
+```
+
+### Change Fonts
+Edit `src/app/layout.tsx` to import different Google Fonts.
+
+### Add Images
+Place images in `/public/` folder:
+- `og-image.jpg` - Social media preview (1200x630px)
+- `favicon.ico` - Browser icon
+- Add procedure images, gallery images, etc.
+
+## 📧 Contact Form Setup
+
+The contact form currently logs to console. To receive emails:
+
+**Option 1: Formspree (Easiest)**
+1. Sign up at https://formspree.io
+2. Get your form endpoint
+3. Update `src/app/api/contact/route.ts`
+
+**Option 2: Resend**
+1. Sign up at https://resend.com
+2. Get API key
+3. Install: `npm install resend`
+4. Update the API route
+
+## 🌐 Deploy to Vercel
+
+1. Push to GitHub:
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/lipfiller-nyc.git
+git push -u origin main
+```
+
+2. Go to https://vercel.com
+3. Import your repository
+4. Click "Deploy"
+
+No environment variables needed! It's that simple.
+
+### Connect Custom Domain
+
+In Vercel:
+1. Go to Settings → Domains
+2. Add `lipfiller.nyc`
+3. Update DNS records at your registrar
+
+## 📁 Project Structure
+
+```
+src/
+├── app/              # Pages
+│   ├── page.tsx      # Home
+│   ├── procedures/   # Procedures pages
+│   ├── pricing/      # Pricing page
+│   ├── gallery/      # Gallery page
+│   └── contact/      # Contact page
+├── components/       # React components
+│   ├── home/        # Home sections
+│   ├── layout/      # Header, Footer
+│   └── ui/          # Reusable components
+└── data/            # ✅ EDIT CONTENT HERE!
+    ├── site-config.ts   # Site settings
+    ├── procedures.ts    # Procedures data
+    ├── pricing.ts       # Pricing data
+    ├── services.ts      # Services data
+    └── testimonials.ts  # Testimonials
+```
+
+## ✅ SEO Features
+
+- ✅ Optimized meta tags on every page
+- ✅ JSON-LD structured data for Google
+- ✅ Automatic sitemap.xml generation
+- ✅ Robots.txt configured
+- ✅ Semantic HTML with proper headings
+- ✅ Mobile-friendly
+- ✅ Fast page load times
+- ✅ OpenGraph tags for social sharing
+
+## 📱 Pages Included
+
+- **Home** - Hero, services, features, gallery preview, CTA
+- **Procedures** - All treatments with detailed pages
+- **Pricing** - Transparent pricing with packages
+- **Gallery** - Before/after showcase + testimonials
+- **Contact** - Contact form with map
+
+## 💡 Quick Tips
+
+1. **Test locally** before deploying: `npm run dev`
+2. **Edit content** in `/src/data/` files
+3. **Add images** to `/public/` folder
+4. **Change colors** in `tailwind.config.ts`
+5. **Update SEO** in each page's metadata
+
+## 📞 Support
+
+Questions? The code is clean and well-commented. Check the files in `/src/data/` first!
+
+---
+
+Made with ❤️ for LipFiller NYC

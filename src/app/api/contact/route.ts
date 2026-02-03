@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
 
 export async function POST(request: Request) {
   try {
@@ -13,20 +12,24 @@ export async function POST(request: Request) {
       )
     }
 
-    const submission = await prisma.contactSubmission.create({
-      data: {
-        name,
-        email,
-        phone: phone || null,
-        service: service || null,
-        message,
-      },
+    // Log the submission (in production, you would send this to your email or a service like Formspree, SendGrid, Resend, etc.)
+    console.log('Contact Form Submission:', {
+      name,
+      email,
+      phone,
+      service,
+      message,
+      timestamp: new Date().toISOString(),
     })
 
-    // Here you could also send an email notification
-    // using a service like SendGrid, Resend, etc.
+    // TODO: Integrate with email service
+    // Example services you can use:
+    // - Formspree: https://formspree.io
+    // - SendGrid: https://sendgrid.com
+    // - Resend: https://resend.com
+    // - Nodemailer with SMTP
 
-    return NextResponse.json({ success: true, id: submission.id })
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Contact form error:', error)
     return NextResponse.json(

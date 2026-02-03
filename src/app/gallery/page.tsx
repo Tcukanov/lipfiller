@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { testimonials } from '@/data/testimonials'
 
 export const metadata: Metadata = {
   title: 'Gallery | Before & After Results',
@@ -167,26 +168,10 @@ export default function GalleryPage() {
           />
 
           <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sarah M.',
-                treatment: 'Russian Lip Technique',
-                text: 'Absolutely love my results! The team made me feel so comfortable and the Russian lip technique gave me exactly the look I wanted - natural but enhanced.',
-              },
-              {
-                name: 'Jessica L.',
-                treatment: 'Powder Brows',
-                text: "Best decision I ever made! My powder brows save me so much time every morning. The attention to detail was incredible.",
-              },
-              {
-                name: 'Amanda K.',
-                treatment: 'Botox',
-                text: "Professional, clean, and amazing results. I've been coming here for Botox for over a year and wouldn't go anywhere else.",
-              },
-            ].map((testimonial) => (
+            {testimonials.map((testimonial) => (
               <div key={testimonial.name} className="card p-6">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-gold-500">
                       ★
                     </span>
