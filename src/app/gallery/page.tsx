@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { testimonials } from '@/data/testimonials'
+import { siteConfig } from '@/data/site-config'
 
 export const metadata: Metadata = {
   title: 'Gallery | Before & After Results',
@@ -204,9 +205,14 @@ export default function GalleryPage() {
             Join our gallery of beautiful transformations. Book your consultation
             today.
           </p>
-          <Link href="/contact" className="btn bg-white text-primary-700 hover:bg-gray-100">
+          <a 
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn bg-white text-primary-700 hover:bg-gray-100"
+          >
             Book Consultation
-          </Link>
+          </a>
         </div>
       </section>
     </>

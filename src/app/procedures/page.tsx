@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Syringe, Sparkles, PenTool, Heart, Smile, Clock, Shield, ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { siteConfig } from '@/data/site-config'
 
 export const metadata: Metadata = {
   title: 'Procedures | Lip Fillers, Botox & Aesthetic Treatments',
@@ -259,9 +260,14 @@ export default function ProceduresPage() {
             Schedule a consultation to discuss your aesthetic goals with our expert
             practitioners.
           </p>
-          <Link href="/contact" className="btn bg-white text-primary-700 hover:bg-gray-100">
+          <a 
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn bg-white text-primary-700 hover:bg-gray-100"
+          >
             Book Consultation
-          </Link>
+          </a>
         </div>
       </section>
     </>

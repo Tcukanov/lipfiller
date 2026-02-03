@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
+import { siteConfig } from '@/data/site-config'
 
 const procedures = [
   { name: 'Russian Lip Technique', href: '/procedures/russian-lip-filler' },
@@ -141,9 +142,14 @@ export function Footer() {
               </li>
             </ul>
             <div className="mt-8">
-              <Link href="/contact" className="btn btn-secondary">
+              <a 
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
                 Book Appointment
-              </Link>
+              </a>
             </div>
           </div>
         </div>

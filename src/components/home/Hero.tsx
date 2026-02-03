@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { siteConfig } from '@/data/site-config'
 
 export function Hero() {
   return (
@@ -44,10 +46,15 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/contact" className="btn btn-primary group">
+              <a 
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary group"
+              >
                 Book Your Appointment
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <Link href="/procedures" className="btn btn-outline">
                 Explore Procedures
               </Link>
@@ -61,7 +68,7 @@ export function Hero() {
               className="mt-16 grid grid-cols-3 gap-8 pt-8 border-t border-cream-300"
             >
               <div>
-                <div className="text-3xl font-display text-primary-900">5K+</div>
+                <div className="text-3xl font-display text-primary-900">2000+</div>
                 <div className="text-sm text-primary-500 tracking-wide">Happy Clients</div>
               </div>
               <div>
@@ -69,7 +76,7 @@ export function Hero() {
                 <div className="text-sm text-primary-500 tracking-wide">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl font-display text-primary-900">15+</div>
+                <div className="text-3xl font-display text-primary-900">3000+</div>
                 <div className="text-sm text-primary-500 tracking-wide">Procedures</div>
               </div>
             </motion.div>
@@ -83,26 +90,26 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative">
-              {/* Main Image Placeholder - Replace with actual image */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-cream-200 to-cream-300 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 border border-gold-300 flex items-center justify-center">
-                      <span className="text-4xl font-display text-gold-500">LF</span>
-                    </div>
-                    <p className="text-primary-600 tracking-widest uppercase text-sm">
-                      Premium Aesthetic Treatments
-                    </p>
-                  </div>
-                </div>
+              {/* Main Image - Next.js automatically converts to WebP */}
+              <div className="aspect-[4/5] overflow-hidden shadow-2xl">
+                <Image
+                  src="/img/lip-filler-nyc.jpg"
+                  alt="Lip Filler Results - Natural Enhancement at LipFiller NYC"
+                  width={600}
+                  height={750}
+                  className="w-full h-full object-cover"
+                  priority
+                  quality={85}
+                  sizes="(max-width: 1024px) 0vw, 50vw"
+                />
               </div>
 
-              {/* Floating Card */}
+              {/* Floating Rating Card */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -left-8 bottom-20 bg-primary-900 text-cream-100 p-6 max-w-xs"
+                className="absolute -left-8 bottom-20 bg-primary-900 text-cream-100 p-6 max-w-xs shadow-xl"
               >
                 <div className="flex items-center gap-4">
                   <div className="text-gold-400">

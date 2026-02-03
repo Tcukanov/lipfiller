@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Phone, Calendar } from 'lucide-react'
+import { siteConfig } from '@/data/site-config'
 
 export function CTA() {
   return (
@@ -37,20 +37,22 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary group"
             >
               <Calendar className="w-5 h-5 mr-2" />
               Book Appointment
-            </Link>
+            </a>
 
             <a
-              href="tel:6465438898"
+              href={`tel:${siteConfig.contact.phoneLink}`}
               className="btn btn-outline"
             >
               <Phone className="w-5 h-5 mr-2" />
-              646.543.8898
+              {siteConfig.contact.phone}
             </a>
           </div>
         </motion.div>

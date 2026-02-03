@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, MapPin } from 'lucide-react'
+import { Menu, X, Phone, MapPin, Instagram } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { siteConfig } from '@/data/site-config'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -51,12 +52,14 @@ export function Header() {
               245 5th Avenue, Floor 3, NYC
             </span>
           </div>
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gold-400 hover:text-gold-300 font-medium transition-colors"
           >
             Book Your Appointment
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -99,11 +102,25 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Link href="/contact" className="btn btn-primary">
+            {/* CTA & Social */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-primary-900 flex items-center justify-center hover:border-gold-400 hover:text-gold-500 transition-colors text-primary-900"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
                 Book Now
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -140,22 +157,34 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-6 px-4">
-              <Link
-                href="/contact"
+            <div className="pt-6 px-4 space-y-3">
+              <a
+                href={siteConfig.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="btn btn-primary w-full"
               >
                 Book Now
-              </Link>
+              </a>
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="btn btn-outline w-full flex items-center justify-center gap-2"
+              >
+                <Instagram className="w-4 h-4" />
+                Follow on Instagram
+              </a>
             </div>
             <div className="px-4 py-4 border-t border-cream-200 mt-4">
               <a
-                href="tel:6465438898"
+                href={`tel:${siteConfig.contact.phoneLink}`}
                 className="flex items-center gap-2 text-primary-600"
               >
                 <Phone className="w-4 h-4" />
-                646.543.8898
+                {siteConfig.contact.phone}
               </a>
             </div>
           </nav>

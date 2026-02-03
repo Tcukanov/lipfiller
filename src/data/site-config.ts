@@ -5,6 +5,9 @@ export const siteConfig = {
     'LipFiller NYC is a premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, microblading, and skin rejuvenation. Book your appointment today.',
   url: 'https://lipfiller.nyc',
   
+  // Booking URL
+  bookingUrl: 'https://book.squareup.com/appointments/tjaxlujatpec8t/location/6DMYCF1TTHFBE/services',
+  
   // Contact Information
   contact: {
     phone: '646.543.8898',
@@ -16,7 +19,7 @@ export const siteConfig = {
 
   // Social Links
   social: {
-    instagram: 'https://instagram.com/lipfiller.nyc',
+    instagram: 'https://www.instagram.com/inxtinct.beauty.aesthetics/',
     facebook: 'https://facebook.com/lipfiller.nyc',
   },
 

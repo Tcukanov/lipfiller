@@ -2,6 +2,7 @@ import { Hero } from '@/components/home/Hero'
 import { Services } from '@/components/home/Services'
 import { Features } from '@/components/home/Features'
 import { Gallery } from '@/components/home/Gallery'
+import { InstagramFeed } from '@/components/home/InstagramFeed'
 import { CTA } from '@/components/home/CTA'
 
 // JSON-LD Structured Data for SEO
@@ -83,6 +84,7 @@ export default function HomePage() {
       <Services />
       <Features />
       <Gallery />
+      <InstagramFeed />
       <CTA />
     </>
   )

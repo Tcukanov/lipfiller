@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Clock, CheckCircle, ArrowLeft, Calendar, Phone } from 'lucide-react'
 import { procedures, getProcedureBySlug, getProcedureSlugs } from '@/data/procedures'
+import { siteConfig } from '@/data/site-config'
 
 // Convert procedures array to object for compatibility
 const proceduresData: Record<string, {
@@ -412,16 +413,21 @@ export default async function ProcedurePage({
                   </div>
 
                   <div className="space-y-3">
-                    <Link href="/contact" className="btn btn-primary w-full">
+                    <a 
+                      href={siteConfig.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary w-full"
+                    >
                       <Calendar className="w-4 h-4 mr-2" />
                       Book Appointment
-                    </Link>
+                    </a>
                     <a
-                      href="tel:6465438898"
+                      href={`tel:${siteConfig.contact.phoneLink}`}
                       className="btn btn-outline w-full"
                     >
                       <Phone className="w-4 h-4 mr-2" />
-                      Call Us
+                      {siteConfig.contact.phone}
                     </a>
                   </div>
                 </div>
@@ -436,12 +442,14 @@ export default async function ProcedurePage({
                     consultation to discuss your goals with our expert
                     practitioners.
                   </p>
-                  <Link
-                    href="/contact"
+                  <a
+                    href={siteConfig.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary-600 font-medium text-sm hover:text-primary-700"
                   >
                     Schedule Now →
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
