@@ -35,8 +35,8 @@ export function Hero() {
             </motion.div>
 
             <h1 className="heading-display text-primary-900 mb-8">
-              <span className="block">Aesthetic</span>
-              <span className="block text-gold-500">Med Studio</span>
+              <span className="block">Lip Filler NYC </span>
+              <span className="block text-gold-500">Medical Studio in Midtown </span>
             </h1>
 
             <p className="text-lg text-primary-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -117,7 +117,7 @@ export function Hero() {
                   </div>
                   <div>
                     <div className="font-display text-lg">5.0 Rating</div>
-                    <div className="text-sm text-cream-400">500+ Reviews</div>
+                    <div className="text-sm text-cream-400">on Google Map</div>
                   </div>
                 </div>
               </motion.div>
