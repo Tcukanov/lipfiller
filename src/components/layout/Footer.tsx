@@ -30,20 +30,19 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-secondary-900 text-white">
+    <footer className="bg-primary-900 text-cream-100">
       {/* Main Footer */}
-      <div className="container-custom py-16">
+      <div className="container-custom py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-display font-bold tracking-tight">
-                <span className="text-primary-400">Lip</span>
-                <span className="text-white">Filler</span>
-                <span className="text-gold-400">.nyc</span>
+              <span className="text-2xl font-display tracking-widest">
+                <span className="text-cream-100">LIPFILLER</span>
+                <span className="text-gold-400">.NYC</span>
               </span>
             </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-cream-400 mb-6 leading-relaxed">
               Premier aesthetic med studio in New York City. Experience the unity
               of modern aesthetic trends, artistry, and medical expertise.
             </p>
@@ -52,7 +51,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-10 h-10 border border-cream-600 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -61,7 +60,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-10 h-10 border border-cream-600 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -71,13 +70,13 @@ export function Footer() {
 
           {/* Procedures */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Procedures</h3>
+            <h3 className="text-sm font-medium mb-6 tracking-widest uppercase text-gold-400">Procedures</h3>
             <ul className="space-y-3">
               {procedures.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors"
+                    className="text-cream-400 hover:text-gold-400 transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -88,13 +87,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-sm font-medium mb-6 tracking-widest uppercase text-gold-400">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors"
+                    className="text-cream-400 hover:text-gold-400 transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -105,12 +104,12 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-sm font-medium mb-6 tracking-widest uppercase text-gold-400">Contact Us</h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href="tel:6465438898"
-                  className="flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors"
+                  className="flex items-start gap-3 text-cream-400 hover:text-gold-400 transition-colors"
                 >
                   <Phone className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span>646.543.8898</span>
@@ -119,7 +118,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:info@lipfiller.nyc"
-                  className="flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors"
+                  className="flex items-start gap-3 text-cream-400 hover:text-gold-400 transition-colors"
                 >
                   <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span>info@lipfiller.nyc</span>
@@ -130,7 +129,7 @@ export function Footer() {
                   href="https://maps.google.com/?q=245+5th+Avenue+New+York+NY+10016"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors"
+                  className="flex items-start gap-3 text-cream-400 hover:text-gold-400 transition-colors"
                 >
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span>
@@ -141,8 +140,8 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
-              <Link href="/contact" className="btn btn-primary">
+            <div className="mt-8">
+              <Link href="/contact" className="btn btn-secondary">
                 Book Appointment
               </Link>
             </div>
@@ -151,16 +150,16 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-cream-800">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
+          <p className="text-cream-500 text-sm">
             © {new Date().getFullYear()} LipFiller.nyc. All Rights Reserved.
           </p>
-          <div className="flex gap-6 text-sm text-gray-500">
-            <Link href="/privacy" className="hover:text-gray-300 transition-colors">
+          <div className="flex gap-6 text-sm text-cream-500">
+            <Link href="/privacy" className="hover:text-gold-400 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-gray-300 transition-colors">
+            <Link href="/terms" className="hover:text-gold-400 transition-colors">
               Terms of Service
             </Link>
           </div>

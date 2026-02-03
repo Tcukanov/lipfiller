@@ -21,21 +21,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-sm disabled:opacity-50 disabled:cursor-not-allowed'
+      'inline-flex items-center justify-center font-medium transition-all duration-300 tracking-wide disabled:opacity-50 disabled:cursor-not-allowed'
 
     const variants = {
-      primary: 'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800',
-      secondary: 'bg-secondary-800 text-white hover:bg-secondary-900',
+      primary: 'bg-primary-900 text-cream-50 hover:bg-primary-800 active:bg-black',
+      secondary: 'bg-gold-400 text-primary-900 hover:bg-gold-500',
       outline:
-        'border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white',
-      gold: 'bg-gold-500 text-white hover:bg-gold-600',
-      ghost: 'text-gray-700 hover:bg-gray-100',
+        'border border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-cream-50',
+      gold: 'bg-gold-400 text-primary-900 hover:bg-gold-500',
+      ghost: 'text-primary-700 hover:bg-cream-200',
     }
 
     const sizes = {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-6 py-3 text-base',
-      lg: 'px-8 py-4 text-lg',
+      sm: 'px-5 py-2.5 text-sm',
+      md: 'px-7 py-3.5 text-base',
+      lg: 'px-9 py-4 text-lg',
     }
 
     return (

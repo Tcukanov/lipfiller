@@ -27,7 +27,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section className="section-padding bg-cream-100">
       <div className="container-custom">
         <SectionHeading
           eyebrow="Why Choose Us"
@@ -35,7 +35,7 @@ export function Features() {
           description="Experience the perfect blend of artistry and medical expertise"
         />
 
-        <div className="mt-16 grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="mt-16 grid md:grid-cols-3 gap-12 lg:gap-16">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -45,15 +45,15 @@ export function Features() {
               transition={{ delay: index * 0.15, duration: 0.5 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-6 shadow-lg shadow-primary-200">
-                <feature.icon className="w-10 h-10" />
+              <div className="inline-flex items-center justify-center w-20 h-20 border border-gold-400 text-gold-500 mb-8">
+                <feature.icon className="w-8 h-8" />
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-2xl font-display text-primary-900 mb-4">
                 {feature.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <p className="text-primary-600 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

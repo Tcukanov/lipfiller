@@ -6,6 +6,7 @@ interface SectionHeadingProps {
   description?: string
   align?: 'left' | 'center'
   className?: string
+  light?: boolean
 }
 
 export function SectionHeading({
@@ -14,6 +15,7 @@ export function SectionHeading({
   description,
   align = 'center',
   className,
+  light = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -24,13 +26,26 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="inline-block text-primary-600 font-medium tracking-wider uppercase text-sm mb-4">
-          {eyebrow}
-        </span>
+        <div className="flex items-center gap-4 mb-6 justify-center">
+          <span className="w-12 h-px bg-gold-400" />
+          <span className={cn(
+            "tracking-[0.3em] uppercase text-sm",
+            light ? "text-gold-400" : "text-gold-500"
+          )}>
+            {eyebrow}
+          </span>
+          <span className="w-12 h-px bg-gold-400" />
+        </div>
       )}
-      <h2 className="heading-section text-gray-900 mb-4">{title}</h2>
+      <h2 className={cn(
+        "heading-section mb-6",
+        light ? "text-cream-50" : "text-primary-900"
+      )}>{title}</h2>
       {description && (
-        <p className="text-lg text-gray-600 leading-relaxed">{description}</p>
+        <p className={cn(
+          "text-lg leading-relaxed",
+          light ? "text-cream-300" : "text-primary-600"
+        )}>{description}</p>
       )}
     </div>
   )

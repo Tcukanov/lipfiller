@@ -12,7 +12,6 @@ const services = [
       'Restore volume and smooth wrinkles with premium dermal fillers. Specializing in lip augmentation, cheek enhancement, and jawline contouring.',
     icon: Syringe,
     href: '/procedures#dermal-fillers',
-    color: 'primary',
   },
   {
     title: 'Skin Rejuvenation & Bio-stimulation',
@@ -20,7 +19,6 @@ const services = [
       'Advanced treatments to revitalize your skin. Microneedling, PRP therapy, and cutting-edge laser treatments for a youthful glow.',
     icon: Sparkles,
     href: '/procedures#skin-rejuvenation',
-    color: 'gold',
   },
   {
     title: 'Microblading & Cosmetic Tattoo',
@@ -28,7 +26,6 @@ const services = [
       'Wake up with perfect brows every day. Natural-looking microblading and cosmetic tattooing for lips and eyeliner.',
     icon: PenTool,
     href: '/procedures#microblading',
-    color: 'secondary',
   },
 ]
 
@@ -71,30 +68,22 @@ export function Services() {
           {services.map((service) => (
             <motion.div key={service.title} variants={itemVariants}>
               <Link href={service.href} className="block group">
-                <div className="card h-full p-8 hover:-translate-y-2 transition-all duration-300">
-                  <div
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors ${
-                      service.color === 'primary'
-                        ? 'bg-primary-100 text-primary-600 group-hover:bg-primary-600 group-hover:text-white'
-                        : service.color === 'gold'
-                        ? 'bg-gold-100 text-gold-600 group-hover:bg-gold-500 group-hover:text-white'
-                        : 'bg-secondary-100 text-secondary-600 group-hover:bg-secondary-800 group-hover:text-white'
-                    }`}
-                  >
-                    <service.icon className="w-7 h-7" />
+                <div className="border border-cream-300 h-full p-10 hover:border-gold-400 hover:shadow-lg transition-all duration-300 bg-white">
+                  <div className="w-14 h-14 border border-cream-300 flex items-center justify-center mb-8 group-hover:border-gold-400 group-hover:text-gold-500 transition-colors text-primary-700">
+                    <service.icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-xl font-display text-primary-900 mb-4 group-hover:text-gold-600 transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed mb-4">
+                  <p className="text-primary-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
 
-                  <span className="inline-flex items-center text-primary-600 font-medium group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center text-gold-500 tracking-wide text-sm uppercase group-hover:gap-2 transition-all">
                     Learn More
-                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>
