@@ -91,11 +91,7 @@ export default function GalleryPage() {
             <h1 className="heading-display text-gray-900 mb-6">
               Our <span className="text-gradient">Works</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Every day, women spend an average of 55-minutes applying and
-              perfecting their makeup. With our services you will start each day
-              with a flawless look.
-            </p>
+            
           </div>
         </div>
       </section>
