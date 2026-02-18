@@ -87,7 +87,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
+            className="relative"
           >
             <div className="relative">
               {/* Main Image - Next.js automatically converts to WebP */}
@@ -100,7 +100,7 @@ export function Hero() {
                   className="w-full h-full object-cover"
                   priority
                   quality={85}
-                  sizes="(max-width: 1024px) 0vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
@@ -109,15 +109,15 @@ export function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -left-8 bottom-20 bg-primary-900 text-cream-100 p-6 max-w-xs shadow-xl"
+                className="absolute -left-4 lg:-left-8 bottom-12 lg:bottom-20 bg-primary-900 text-cream-100 p-4 lg:p-6 max-w-xs shadow-xl"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 lg:gap-4">
                   <div className="text-gold-400">
-                    <span className="text-2xl">★★★★★</span>
+                    <span className="text-xl lg:text-2xl">★★★★★</span>
                   </div>
                   <div>
-                    <div className="font-display text-lg">5.0 Rating</div>
-                    <div className="text-sm text-cream-400">on Google Map</div>
+                    <div className="font-display text-base lg:text-lg">5.0 Rating</div>
+                    <div className="text-xs lg:text-sm text-cream-400">on Google Map</div>
                   </div>
                 </div>
               </motion.div>
