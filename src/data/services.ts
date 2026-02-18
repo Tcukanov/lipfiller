@@ -12,15 +12,15 @@ export const services: Service[] = [
     href: '/procedures#dermal-fillers',
   },
   {
-    title: 'Skin Rejuvenation & Bio-stimulation',
+    title: 'Botox & Anti-Aging',
     description:
-      'Advanced treatments to revitalize your skin. Microneedling, PRP therapy, and cutting-edge laser treatments for a youthful glow.',
-    href: '/procedures#skin-rejuvenation',
+      'Smooth wrinkles and prevent new lines from forming with Botox. Expert treatment for forehead lines, crow\'s feet, and frown lines.',
+    href: '/procedures/botox',
   },
   {
-    title: 'Microblading & Cosmetic Tattoo',
+    title: 'Facial Contouring',
     description:
-      'Wake up with perfect brows every day. Natural-looking microblading and cosmetic tattooing for lips and eyeliner.',
-    href: '/procedures#microblading',
+      'Sculpt and define your facial features with expert contouring techniques. Create a more balanced, harmonious appearance non-surgically.',
+    href: '/procedures/face-contouring',
   },
 ]

@@ -32,26 +32,27 @@ export const pricingPackages: Package[] = [
   },
   {
     name: 'Full Glow',
-    price: '$1,999',
-    description: 'Complete facial rejuvenation',
+    price: '$1,799',
+    description: 'Complete facial enhancement',
     features: [
       '1ml Lip Filler',
       'Cheek Enhancement',
       'Full Face Botox',
-      'Microneedling Session',
+      'Under Eye Treatment',
       '15% Off Future Treatments',
     ],
     featured: true,
   },
   {
-    name: 'Brow Boss',
-    price: '$599',
-    description: 'Wake up with perfect brows',
+    name: 'Contour & Sculpt',
+    price: '$1,499',
+    description: 'Define and enhance your features',
     features: [
-      'Powder Brows or Microblading',
-      'Brow Shaping Consultation',
+      'Jawline Contouring',
+      'Cheek Enhancement',
+      'Chin Enhancement',
       'Aftercare Kit',
-      'Free Touch-Up (6-8 weeks)',
+      '10% Off Future Treatments',
     ],
   },
 ]
@@ -140,61 +141,6 @@ export const pricingCategories: PricingCategory[] = [
         name: 'Full Face Botox',
         price: '$500+',
         description: 'Comprehensive wrinkle treatment',
-      },
-    ],
-  },
-  {
-    title: 'Skin Rejuvenation',
-    services: [
-      {
-        name: 'Microneedling',
-        price: '$350',
-        description: 'Stimulate collagen production',
-      },
-      {
-        name: 'Microneedling + PRP',
-        price: '$550',
-        description: 'Enhanced healing with platelet-rich plasma',
-      },
-      {
-        name: 'Chemical Peel',
-        price: '$150+',
-        description: 'Refresh and renew skin',
-      },
-      {
-        name: 'PRP Facial',
-        price: '$500',
-        description: 'Vampire facial for rejuvenation',
-      },
-    ],
-  },
-  {
-    title: 'Permanent Makeup',
-    services: [
-      {
-        name: 'Powder Brows',
-        price: '$450',
-        description: 'Soft, filled-in brow look',
-      },
-      {
-        name: 'Microblading',
-        price: '$400',
-        description: 'Natural hair-like strokes',
-      },
-      {
-        name: 'Combination Brows',
-        price: '$500',
-        description: 'Microblading + powder shading',
-      },
-      {
-        name: 'Lip Blush',
-        price: '$400',
-        description: 'Semi-permanent lip color',
-      },
-      {
-        name: 'Brow Touch-Up',
-        price: '$150',
-        description: 'Annual maintenance session',
       },
     ],
   },

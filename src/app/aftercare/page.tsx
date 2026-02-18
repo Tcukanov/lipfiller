@@ -56,25 +56,6 @@ const botoxAftercare = {
   ],
 }
 
-const powderBrowsAftercare = {
-  dos: [
-    'Keep the area clean and dry for 10 days',
-    'Apply provided healing ointment 2-3 times daily',
-    'Let scabs fall off naturally - do not pick',
-    'Sleep on your back to avoid rubbing',
-    'Avoid getting brows wet for the first 7 days',
-    'Attend your touch-up appointment in 6-8 weeks',
-  ],
-  donts: [
-    'Get brows wet for the first 7 days',
-    'Pick, scratch, or peel any scabs',
-    'Apply makeup to the treated area for 10 days',
-    'Go swimming, to saunas, or hot tubs for 10 days',
-    'Do strenuous exercise that causes sweating for 7 days',
-    'Expose brows to direct sun or tanning beds for 4 weeks',
-  ],
-}
-
 export default function AftercarePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -221,54 +202,6 @@ export default function AftercarePage() {
                 </div>
                 <ul className="space-y-3">
                   {botoxAftercare.donts.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-red-600 mt-1">✗</span>
-                      <span className="text-primary-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Powder Brows Aftercare */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-section text-primary-900 mb-4 text-center">
-              Powder Brows Aftercare
-            </h2>
-            <p className="text-center text-primary-600 mb-12 max-w-2xl mx-auto">
-              Follow these instructions for 10 days after your powder brow treatment
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Dos */}
-              <div className="border border-cream-300 p-8 bg-cream-50">
-                <div className="flex items-center gap-3 mb-6">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
-                  <h3 className="text-xl font-semibold text-primary-900">DO</h3>
-                </div>
-                <ul className="space-y-3">
-                  {powderBrowsAftercare.dos.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span className="text-primary-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Don'ts */}
-              <div className="border border-cream-300 p-8 bg-white">
-                <div className="flex items-center gap-3 mb-6">
-                  <AlertCircle className="w-6 h-6 text-red-600" />
-                  <h3 className="text-xl font-semibold text-primary-900">DON'T</h3>
-                </div>
-                <ul className="space-y-3">
-                  {powderBrowsAftercare.donts.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="text-red-600 mt-1">✗</span>
                       <span className="text-primary-700">{item}</span>

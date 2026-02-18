@@ -14,8 +14,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: 'Jessica L.',
-    treatment: 'Powder Brows',
-    text: "Best decision I ever made! My powder brows save me so much time every morning. The attention to detail was incredible.",
+    treatment: 'Face Contouring',
+    text: "Amazing transformation! The facial contouring gave me such beautiful definition. The results look so natural and balanced.",
     rating: 5,
   },
   {

@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/procedures/lip-augmentation',
     '/procedures/face-contouring',
     '/procedures/botox',
-    '/procedures/powder-brows',
     '/pricing',
     '/gallery',
     '/contact',

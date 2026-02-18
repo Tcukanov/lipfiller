@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | LipFiller NYC',
   },
   description:
-    'LipFiller NYC is a premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, microblading, and skin rejuvenation. Book your appointment today.',
+    'LipFiller NYC is a premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, and Russian lip technique. Expert facial contouring and enhancement. Book your appointment today.',
   keywords: [
     'lip filler NYC',
     'lip fillers New York',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'Botox NYC',
     'aesthetic med spa New York',
     'lip augmentation NYC',
-    'microblading NYC',
+    'facial contouring NYC',
     'cosmetic injections New York',
     'face contouring NYC',
   ],
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: 'LipFiller NYC',
     title: 'LipFiller NYC | Premier Aesthetic Med Studio in New York City',
     description:
-      'Expert lip fillers, dermal fillers, Botox, and microblading services in NYC. Experience the Russian lip technique and advanced aesthetic treatments.',
+      'Expert lip fillers, dermal fillers, Botox, and facial contouring in NYC. Experience the Russian lip technique and advanced aesthetic treatments.',
     images: [
       {
         url: '/og-image.jpg',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LipFiller NYC | Premier Aesthetic Med Studio',
     description:
-      'Expert lip fillers, dermal fillers, Botox, and microblading services in NYC.',
+      'Expert lip fillers, dermal fillers, Botox, and facial contouring in NYC.',
     images: ['/og-image.jpg'],
   },
   robots: {

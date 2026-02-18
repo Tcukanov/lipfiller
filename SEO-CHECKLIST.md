@@ -236,7 +236,7 @@ After deployment, test your SEO with these tools:
 - dermal fillers Manhattan
 - microblading NYC
 - aesthetic med spa New York
-- powder brows NYC
+- face contouring NYC
 
 ---
 

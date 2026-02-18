@@ -44,7 +44,7 @@ const jsonLd = {
   priceRange: '$$',
   servesCuisine: 'Aesthetic Medical Services',
   description:
-    'Premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, microblading, and skin rejuvenation.',
+    'Premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, and facial contouring.',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',

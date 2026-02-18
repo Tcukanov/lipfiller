@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'LipFiller NYC',
   title: 'LipFiller NYC | Premier Aesthetic Med Studio in New York City',
   description:
-    'LipFiller NYC is a premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, microblading, and skin rejuvenation. Book your appointment today.',
+    'LipFiller NYC is a premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, Russian lip technique, and facial contouring. Book your appointment today.',
   url: 'https://lipfiller.nyc',
   
   // Booking URL
@@ -85,7 +85,7 @@ export const siteConfig = {
     'Botox NYC',
     'aesthetic med spa New York',
     'lip augmentation NYC',
-    'microblading NYC',
+    'facial contouring NYC',
     'cosmetic injections New York',
     'face contouring NYC',
   ],

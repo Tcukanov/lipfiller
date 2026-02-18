@@ -192,44 +192,6 @@ const legacyProceduresData: Record<string, {
       },
     ],
   },
-  'powder-brows': {
-    title: 'Powder Brows',
-    category: 'Cosmetic Tattoo',
-    description:
-      'Achieve perfect, soft, powdery brows that last with this semi-permanent makeup technique.',
-    content: `
-      <p>Powder brows (also known as ombre brows) create a soft, filled-in look similar to makeup. This semi-permanent makeup technique is perfect for all skin types and provides long-lasting, beautiful results.</p>
-      
-      <h3>The Technique</h3>
-      <p>Using a specialized machine, tiny dots of pigment are deposited into the skin, creating a soft, powdery effect that mimics the look of filled-in brows. The result is soft at the front and gradually builds to more definition at the tail.</p>
-      
-      <h3>Who Is It For?</h3>
-      <p>Powder brows work beautifully for almost everyone, including those with oily skin (where microblading may not hold as well), sparse brows, or anyone who wants to wake up with perfect brows every day.</p>
-    `,
-    benefits: [
-      'Long-lasting results (1-3 years)',
-      'Soft, natural look',
-      'Suitable for all skin types',
-      'Low maintenance',
-      'Time-saving daily routine',
-      'Customized shape and color',
-    ],
-    duration: '2-3 hours',
-    recovery: '7-10 days',
-    price: 'Starting at $450',
-    faqs: [
-      {
-        question: 'How long do powder brows last?',
-        answer:
-          'Powder brows typically last 1-3 years, depending on your skin type and lifestyle. A touch-up is recommended at 6-8 weeks and annually thereafter.',
-      },
-      {
-        question: 'Is the procedure painful?',
-        answer:
-          'A topical numbing cream is applied before and during the procedure to ensure your comfort. Most clients describe the sensation as mild scratching.',
-      },
-    ],
-  },
 }
 
 export async function generateStaticParams() {
