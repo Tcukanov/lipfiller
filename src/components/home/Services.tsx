@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Syringe, Sparkles, PenTool, ArrowRight } from 'lucide-react'
+import { Syringe, Sparkles, Heart, ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 const services = [
@@ -14,18 +14,18 @@ const services = [
     href: '/procedures#dermal-fillers',
   },
   {
-    title: 'Skin Rejuvenation & Bio-stimulation',
+    title: 'Botox & Anti-Aging',
     description:
-      'Advanced treatments to revitalize your skin. Microneedling, PRP therapy, and cutting-edge laser treatments for a youthful glow.',
+      'Smooth wrinkles and prevent new lines from forming with Botox. Expert treatment for forehead lines, crow\'s feet, and frown lines.',
     icon: Sparkles,
-    href: '/procedures#skin-rejuvenation',
+    href: '/procedures/botox',
   },
   {
-    title: 'Microblading & Cosmetic Tattoo',
+    title: 'Facial Contouring',
     description:
-      'Wake up with perfect brows every day. Natural-looking microblading and cosmetic tattooing for lips and eyeliner.',
-    icon: PenTool,
-    href: '/procedures#microblading',
+      'Sculpt and define your facial features with expert contouring techniques. Create a more balanced, harmonious appearance non-surgically.',
+    icon: Heart,
+    href: '/procedures/face-contouring',
   },
 ]
 
@@ -55,7 +55,7 @@ export function Services() {
         <SectionHeading
           eyebrow="Our Services"
           title="Procedures"
-          description="We specialize in Dermal Fillers, Botox, Bio-stimulation, Microneedling/PRP, Skin Rejuvenation & Tightening, Microblading and Cosmetic Tattoo"
+          description="We specialize in Dermal Fillers, Botox, Lip Enhancement, and Facial Contouring to help you achieve natural, beautiful results."
         />
 
         <motion.div

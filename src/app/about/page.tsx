@@ -57,7 +57,7 @@ export default function AboutPage() {
       name: siteConfig.name,
       foundingDate: '2018',
       description:
-        'Premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, and microblading.',
+        'Premier aesthetic med studio in New York City specializing in lip fillers, dermal fillers, Botox, and facial contouring.',
     },
   }
 

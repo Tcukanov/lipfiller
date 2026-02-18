@@ -10,7 +10,6 @@ const procedures = [
   { name: 'Lip Augmentation', href: '/procedures/lip-augmentation' },
   { name: 'Face Contouring', href: '/procedures/face-contouring' },
   { name: 'Botox', href: '/procedures/botox' },
-  { name: 'Powder Brows', href: '/procedures/powder-brows' },
 ]
 
 const quickLinks = [

@@ -7,20 +7,20 @@ import { siteConfig } from '@/data/site-config'
 export const metadata: Metadata = {
   title: 'Procedures | Lip Fillers, Botox & Aesthetic Treatments',
   description:
-    'Explore our comprehensive range of aesthetic procedures including lip fillers, Russian lip technique, dermal fillers, Botox, face contouring, microblading, and skin rejuvenation in NYC.',
+    'Explore our comprehensive range of aesthetic procedures including lip fillers, Russian lip technique, dermal fillers, Botox, and facial contouring in NYC.',
   keywords: [
     'lip filler procedures NYC',
     'Russian lip technique',
     'dermal fillers Manhattan',
     'Botox treatments New York',
     'face contouring NYC',
-    'microblading NYC',
+    'facial enhancement NYC',
     'aesthetic procedures NYC',
   ],
   openGraph: {
     title: 'Procedures | LipFiller NYC',
     description:
-      'Comprehensive aesthetic procedures including lip fillers, Botox, and microblading in New York City.',
+      'Comprehensive aesthetic procedures including lip fillers, Botox, and facial contouring in New York City.',
   },
 }
 
@@ -82,36 +82,6 @@ const procedures = [
         price: 'Starting at $12/unit',
         duration: '15-30 min',
       },
-      {
-        title: 'Skin Rejuvenation',
-        slug: 'skin-rejuvenation',
-        description:
-          'Advanced bio-stimulation treatments including microneedling and PRP therapy for youthful, glowing skin.',
-        price: 'Starting at $350',
-        duration: '60 min',
-      },
-    ],
-  },
-  {
-    category: 'Cosmetic Tattoo',
-    icon: PenTool,
-    items: [
-      {
-        title: 'Powder Brows',
-        slug: 'powder-brows',
-        description:
-          'Achieve perfect, soft, powdery brows that last. Suitable for all skin types with long-lasting results.',
-        price: 'Starting at $450',
-        duration: '2-3 hours',
-      },
-      {
-        title: 'Microblading',
-        slug: 'microblading',
-        description:
-          'Create natural-looking, hair-like strokes for beautiful, defined eyebrows that wake up ready.',
-        price: 'Starting at $400',
-        duration: '2 hours',
-      },
     ],
   },
 ]
@@ -127,9 +97,8 @@ export default function ProceduresPage() {
               Our <span className="text-gradient">Procedures</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              We specialize in Dermal Fillers, Botox, Bio-stimulation,
-              Microneedling/PRP, Skin Rejuvenation & Tightening, Microblading and
-              Cosmetic Tattoo
+              We specialize in Dermal Fillers, Botox, Lip Enhancement, and Facial Contouring
+              to help you achieve natural, beautiful results.
             </p>
           </div>
         </div>

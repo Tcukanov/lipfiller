@@ -7,12 +7,12 @@ import { siteConfig } from '@/data/site-config'
 export const metadata: Metadata = {
   title: 'Gallery | Before & After Results',
   description:
-    'View our before and after gallery showcasing lip filler, Botox, face contouring, and microblading results at LipFiller NYC.',
+    'View our before and after gallery showcasing lip filler, Botox, and face contouring results at LipFiller NYC.',
   keywords: [
     'lip filler before after NYC',
     'Botox results',
     'face contouring gallery',
-    'microblading before after',
+    'dermal filler results',
     'aesthetic treatment results',
   ],
   openGraph: {
@@ -27,7 +27,6 @@ const categories = [
   { name: 'Lip Enhancement', slug: 'lips' },
   { name: 'Face Contouring', slug: 'face' },
   { name: 'Botox', slug: 'botox' },
-  { name: 'Powder Brows', slug: 'brows' },
 ]
 
 // Placeholder gallery items - these would come from the database
@@ -64,21 +63,21 @@ const galleryItems = [
   },
   {
     id: 6,
-    title: 'Powder Brows',
-    category: 'brows',
-    description: 'Soft, natural-looking brows',
-  },
-  {
-    id: 7,
     title: 'Full Lip Enhancement',
     category: 'lips',
     description: 'Dramatic yet natural lip transformation',
   },
   {
-    id: 8,
-    title: 'Full Face Rejuvenation',
+    id: 7,
+    title: 'Comprehensive Facial Contouring',
     category: 'face',
-    description: 'Comprehensive facial enhancement',
+    description: 'Multi-area facial enhancement',
+  },
+  {
+    id: 8,
+    title: "Crow's Feet Treatment",
+    category: 'botox',
+    description: 'Youthful, refreshed eye area',
   },
 ]
 

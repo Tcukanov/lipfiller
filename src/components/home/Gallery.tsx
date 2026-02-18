@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 const categories = [
+  { name: 'Russian Lip Technique', image: '/gallery/russian-lips.jpg' },
   { name: 'Face Contouring', image: '/gallery/face-contouring.jpg' },
   { name: 'Lip Augmentation', image: '/gallery/lip-augmentation.jpg' },
   { name: 'Botox', image: '/gallery/botox.jpg' },
-  { name: 'Powder Brows', image: '/gallery/powder-brows.jpg' },
 ]
 
 export function Gallery() {

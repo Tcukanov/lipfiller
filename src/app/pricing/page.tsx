@@ -3,12 +3,12 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Pricing | Lip Filler & Aesthetic Treatment Costs',
   description:
-    'View our transparent pricing for lip fillers, Botox, face contouring, microblading, and other aesthetic treatments in NYC. Book your appointment online.',
+    'View our transparent pricing for lip fillers, Botox, face contouring, and other aesthetic treatments in NYC. Book your appointment online.',
   keywords: [
     'lip filler cost NYC',
     'Botox price New York',
     'dermal filler pricing',
-    'microblading cost NYC',
+    'facial contouring cost NYC',
     'aesthetic treatment prices',
   ],
   openGraph: {
