@@ -34,7 +34,7 @@ const procedures = [
         slug: 'russian-lip-filler',
         description:
           'The Russian lip technique creates a heart-shaped, doll-like lip appearance with more height than width. No duck lip effect.',
-        price: 'Starting at $650',
+        price: 'Starting at $450',
         duration: '30-45 min',
         featured: true,
       },
