@@ -38,13 +38,6 @@ export function Gallery() {
               makeup during their lifetime.
             </p>
 
-            <p className="text-cream-300 leading-relaxed mb-10">
-              Thankfully, there is an easier way to achieve a head-turning
-              appearance. With our services you will start each day with a
-              flawless look. Our practitioners ensure that you wake up every
-              morning looking beautiful and ready for anything.
-            </p>
-
             <Link
               href="/gallery"
               className="inline-flex items-center gap-2 text-gold-400 tracking-wide uppercase text-sm hover:text-gold-300 transition-colors group"
