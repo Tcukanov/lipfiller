@@ -64,7 +64,7 @@ export const procedures: Procedure[] = [
   {
     slug: 'russian-lip-filler',
     title: 'Russian Lip Filler Technique',
-    price: 'Starting at $650',
+    price: 'Starting at $450',
     description: '...',
     // ... edit or add new procedures
   },
@@ -79,7 +79,7 @@ export const pricingCategories = [
   {
     title: 'Lip Enhancement',
     services: [
-      { name: 'Russian Lip', price: '$650+', description: '...' },
+      { name: 'Russian Lip', price: '$450+', description: '...' },
       // ... add or edit services
     ],
   },

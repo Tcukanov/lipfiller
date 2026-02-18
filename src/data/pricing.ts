@@ -63,7 +63,7 @@ export const pricingCategories: PricingCategory[] = [
     services: [
       {
         name: 'Russian Lip Technique',
-        price: '$650+',
+        price: '$450+',
         description: 'Heart-shaped, lifted lips with natural definition',
         popular: true,
       },

@@ -44,7 +44,7 @@ export const procedures: Procedure[] = [
     ],
     duration: '30-45 minutes',
     recovery: '24-48 hours of mild swelling',
-    price: 'Starting at $650',
+    price: 'Starting at $450',
     popular: true,
     faqs: [
       {
